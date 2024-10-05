@@ -1,6 +1,21 @@
 {
   "name": "@mateothegreat/svelte5-table",
   "version": "1.0.4",
+  "contributors": [
+    {
+      "name": "Matthew Davis",
+      "email": "matthew@matthewdavis.io",
+      "url": "https://matthewdavis.io"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mateothegreat/svelte5-table"
+  },
+  "homepage": "https://github.com/mateothegreat/svelte5-table",
+  "bugs": {
+    "url": "https://github.com/mateothegreat/svelte5-table/issues"
+  },
   "type": "module",
   "svelte": "./src/lib/index.ts",
   "module": "./src/lib/index.ts",
