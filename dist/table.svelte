@@ -1,14 +1,5 @@
-<script lang="ts">
-  import { Body, Header } from ".";
-  import type { TableColumn, TableHeader } from "./types";
-  import type { TableProps } from "./types.ts";
-
-  type Props = {
-    table: TableProps;
-    data: any[];
-  };
-
-  let { table, data }: Props = $props();
+<script lang="ts">import { Body, Header } from ".";
+let { table, data } = $props();
 </script>
 
 {#snippet header(columns: TableHeader[])}

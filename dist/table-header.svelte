@@ -1,6 +1,4 @@
-<script lang="ts">
-  import type { TableHeader } from "./types";
-  let { header }: { header: TableHeader[] } = $props();
+<script lang="ts">let { header } = $props();
 </script>
 
 <thead>
