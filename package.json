@@ -2,23 +2,21 @@
   "name": "@mateothegreat/svelte5-table",
   "version": "1.0.3",
   "type": "module",
-  "svelte": "./src/dist/index.ts",
-  "module": "./src/dist/index.ts",
+  "svelte": "./src/lib/index.ts",
+  "module": "./src/lib/index.ts",
   "exports": {
     ".": {
-      "import": "./src/dist/index.ts"
+      "import": "./src/lib/index.ts"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "package": "svelte-kit package",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "release": "npm run check && rm -rf dist; npm version from-git && cp -r src/lib dist && cp package.json dist"
   },
   "devDependencies": {
-    "@sveltejs/kit": "^2.6.1",
     "@sveltejs/package": "^2.3.5",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@tsconfig/svelte": "^5.0.4",

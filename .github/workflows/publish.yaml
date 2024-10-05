@@ -25,9 +25,7 @@ jobs:
           target-branch: main
           commit-message: "CI: bumps version to {{version}} [skip ci]"
       - name: Build
-        run: |
-          cp -r src/lib dist
-          cp package.json dist
+        run: cp package.json dist
       - name: Write out .npmrc
         run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}" > ~/.npmrc
       - run: npm publish --access=public
