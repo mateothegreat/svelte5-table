@@ -1,6 +1,6 @@
 {
   "name": "@mateothegreat/svelte5-table",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "type": "module",
   "svelte": "./src/lib/index.ts",
   "module": "./src/lib/index.ts",
@@ -10,7 +10,7 @@
     }
   },
   "files": [
-    "."
+    "src/lib"
   ],
   "scripts": {
     "build": "svelte-kit sync && svelte-package",
