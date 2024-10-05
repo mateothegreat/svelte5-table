@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+      - main
+name: Build, Test and maybe Publish
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - run: npm install -g pnpm
+      - name: Install Dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: "Automated Version Bump"
+        uses: "phips28/gh-action-bump-version@master"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          target-branch: main
+          commit-message: "CI: bumps version to {{version}} [skip ci]"
+      - name: Build
+        run: npm run build
+      - name: Write out .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}" > ~/.npmrc
+      - run: npm publish --access=public
