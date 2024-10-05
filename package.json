@@ -10,7 +10,8 @@
     }
   },
   "files": [
-    "src/lib"
+    "dist",
+    "src"
   ],
   "scripts": {
     "build": "svelte-kit sync && svelte-package",
