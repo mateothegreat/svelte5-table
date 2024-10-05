@@ -10,8 +10,7 @@
     }
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "package": "svelte-kit package",
