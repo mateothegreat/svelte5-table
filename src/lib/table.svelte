@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Body, Header } from ".";
-  import type { TableColumn, TableHeader } from "./types";
+  import type { TableColumn } from "./types";
   import type { TableProps } from "./types.ts";
 
   type Props = {
@@ -11,8 +11,8 @@
   let { table, data }: Props = $props();
 </script>
 
-{#snippet header(columns: TableHeader[])}
-  <Header header={table.header} />
+{#snippet header(columns: TableColumn[])}
+  <Header header={columns} />
 {/snippet}
 
 {#snippet body(columns: TableColumn[], data: any[])}
@@ -20,6 +20,6 @@
 {/snippet}
 
 <table class="w-full caption-bottom text-sm {table.classes}">
-  {@render header(table.header)}
+  {@render header(table.columns)}
   {@render body(table.columns, data)}
 </table>

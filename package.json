@@ -28,7 +28,10 @@
     "svelte-check": "^4.0.4",
     "typescript": "^5.6.2",
     "vite": "^5.4.8",
-    "vite-plugin-dts": "^4.2.3"
+    "vite-plugin-dts": "^4.2.3",
+    "prettier": "^3.3.3",
+    "prettier-plugin-svelte": "^3.2.7",
+    "prettier-plugin-tailwindcss": "^0.6.8"
   },
   "peerDependencies": {
     "svelte": "^5.0.0-next.262"
