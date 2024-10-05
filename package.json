@@ -17,7 +17,7 @@
     "build": "svelte-kit sync && svelte-package",
     "package": "svelte-kit package",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "release": "npm run check && svelte-package && npm version patch && cp package.json dist/package.json && cd dist && npm version patch && npm publish"
+    "release": "npm run check && rm -rf dist; cp -r src/lib dist && cp package.json dist"
   },
   "devDependencies": {
     "@sveltejs/kit": "^2.6.1",
@@ -25,14 +25,14 @@
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@tsconfig/svelte": "^5.0.4",
     "@types/node": "^22.7.4",
+    "prettier": "^3.3.3",
+    "prettier-plugin-svelte": "^3.2.7",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "svelte": "^5.0.0-next.262",
     "svelte-check": "^4.0.4",
     "typescript": "^5.6.2",
     "vite": "^5.4.8",
-    "vite-plugin-dts": "^4.2.3",
-    "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.7",
-    "prettier-plugin-tailwindcss": "^0.6.8"
+    "vite-plugin-dts": "^4.2.3"
   },
   "peerDependencies": {
     "svelte": "^5.0.0-next.262"
