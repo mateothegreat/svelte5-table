@@ -17,7 +17,7 @@
     "build": "svelte-kit sync && svelte-package",
     "package": "svelte-kit package",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "release": "npm run check && rm -rf dist; cp -r src/lib dist && cp package.json dist"
+    "release": "npm run check && rm -rf dist; npm version from-git && cp -r src/lib dist && cp package.json dist"
   },
   "devDependencies": {
     "@sveltejs/kit": "^2.6.1",
