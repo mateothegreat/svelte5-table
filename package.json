@@ -1,6 +1,6 @@
 {
   "name": "@mateothegreat/svelte5-table",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "svelte": "./src/lib/index.ts",
   "module": "./src/lib/index.ts",
