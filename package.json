@@ -3,10 +3,9 @@
   "version": "1.0.6",
   "type": "module",
   "svelte": "./src/lib/index.ts",
-  "module": "./src/lib/index.ts",
   "exports": {
     ".": {
-      "import": "./src/lib/index.ts"
+      "svelte": "./src/lib/index.ts"
     }
   },
   "files": [
