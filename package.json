@@ -31,6 +31,6 @@
     "vite-plugin-dts": "^4.2.3"
   },
   "peerDependencies": {
-    "svelte": "^5.0.0-next.262"
+    "svelte": "^5.0.0"
   }
 }
