@@ -21,11 +21,11 @@
     },
     {
       field: "custom",
-      header: actionsHeader
+      header: customHeader
     },
     {
       field: "actions",
-      classes: "flex items-center justify-end",
+      classes: "w-24 flex items-center justify-center",
       renderer: actionsColumn
     }
   ];
@@ -33,13 +33,15 @@
   const components: Writable<Component[]> = writable([
     {
       id: "1",
-      name: "Button",
-      description: "A button component"
+      name: "Foo",
+      custom: "This is a custom column 1",
+      description: "A foo component"
     },
     {
       id: "2",
-      name: "Input",
-      description: "An input component"
+      name: "Bar",
+      custom: "This is a custom column 2",
+      description: "A bar component"
     }
   ]);
 
@@ -47,17 +49,14 @@
   selections.set([$components[0].id]);
 </script>
 
-{#snippet actionsHeader()}
-  <div class="flex items-center gap-2 border-b border-zinc-700 py-4">My Custom Header</div>
+{#snippet customHeader()}
+  <div class="flex justify-center rounded-lg border border-pink-500 p-1 text-indigo-500">My Custom Header</div>
 {/snippet}
 
 {#snippet actionsColumn(row: any)}
-  <div class="flex items-center gap-2">
-    This is a custom snippet!
-    <button class="rounded-md bg-blue-500 px-3 py-1 text-white">
-      Edit #{row.id}
-    </button>
-  </div>
+  <button class="rounded-md bg-blue-500 px-3 py-1 text-white">
+    Edit #{row.id}
+  </button>
 {/snippet}
 
 <div class="absolute h-full w-full bg-black p-20">

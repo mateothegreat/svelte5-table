@@ -1,6 +1,7 @@
 <script lang="ts" generics="T extends Record<string, any>">
   import { onMount } from "svelte";
   import { type Writable } from "svelte/store";
+  import { twMerge } from "tailwind-merge";
   import type { TableColumn } from "../types";
   import TableCheckbox from "./table-checkbox.svelte";
   import { TableConfig } from "./types";
@@ -91,16 +92,20 @@
         </th>
       {/if}
       {#each columns as column, index (column.field)}
-        <th class="text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]">
-          {column.field}
-        </th>
+        {#if typeof column.header === "function"}
+          {@render column.header()}
+        {:else}
+          <th class={twMerge("text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", column.classes)}>
+            {column.header}
+          </th>
+        {/if}
       {/each}
     </tr>
   </thead>
   <tbody class="text-slate-400 [&_tr:last-child]:border-0">
     {#each data as row}
       <tr data-state={$selections.includes(row[id]) ? "selected" : ""} class="hover:bg-muted/10 overflow-hidden rounded-lg transition-colors duration-300 data-[state=selected]:bg-zinc-900/50">
-        <td class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]">
+        <td class={twMerge("p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]")}>
           <TableCheckbox
             checked={$selections.includes(row[id])}
             changed={(v: boolean) => {
