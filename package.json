@@ -31,5 +31,9 @@
   },
   "peerDependencies": {
     "svelte": "^5.0.0"
+  },
+  "dependencies": {
+    "bits-ui": "^1.0.0-next.26",
+    "tailwind-merge": "^2.5.4"
   }
 }

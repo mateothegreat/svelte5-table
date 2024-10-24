@@ -9,10 +9,21 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "allowJs": false,
-    "checkJs": false,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true,
     "isolatedModules": true,
-    "moduleResolution": "bundler"
+    "strict": true,
+    "noEmit": true,
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@mateothegreat/svelte5-table": [
+        "../../src/lib"
+      ],
+      "@mateothegreat/svelte5-table/*": [
+        "../../src/lib/*"
+      ]
+    },
   },
   "include": [
     "src/**/*.ts",
