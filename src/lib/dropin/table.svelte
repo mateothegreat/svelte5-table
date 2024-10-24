@@ -11,7 +11,7 @@
     config: TableConfig;
     data: T[];
     columns: TableColumn[];
-    selected: Writable<T[]>;
+    selections: Writable<T[]>;
   };
 
   let { id, config, columns, data, selections = $bindable() }: Props = $props();
@@ -71,7 +71,7 @@
   onMount(() => {
     for (let selection of $selections) {
       if (!$selections.includes(selection)) {
-        $selections = [...selections, selection];
+        selections.update((selections: T[]) => [...selections, selection]);
       }
     }
   });
