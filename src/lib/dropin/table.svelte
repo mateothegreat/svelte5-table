@@ -77,8 +77,6 @@
   });
 </script>
 
-<pre class="mb-5 rounded-md border border-slate-700 p-2 text-slate-500">{JSON.stringify($selections)}</pre>
-
 <table class="w-full caption-bottom text-sm">
   <thead>
     <tr>

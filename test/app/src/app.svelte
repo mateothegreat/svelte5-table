@@ -59,8 +59,12 @@
   </button>
 {/snippet}
 
-<div class="absolute h-full w-full bg-black p-20">
+<div class="absolute flex h-full w-full flex-col gap-5 bg-black p-20 text-slate-500">
   <DropinTable config={{ selection: { all: true } }} {columns} id="id" data={$components} bind:selections />
+  <div class="flex flex-col gap-2 rounded-md border border-slate-700 p-2">
+    <div class="text-sm font-medium">Selections:</div>
+    <pre>{JSON.stringify($selections)}</pre>
+  </div>
 </div>
 
 <!-- <pre>{$inspect($selected).with(console.trace)}</pre> -->
