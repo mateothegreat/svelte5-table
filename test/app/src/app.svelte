@@ -60,7 +60,7 @@
 {/snippet}
 
 <div class="absolute flex h-full w-full flex-col gap-5 bg-black p-20 text-slate-500">
-  <DropinTable config={{ selection: { all: true } }} {columns} id="id" data={$components} bind:selections />
+  <DropinTable config={{ selection: { row: false, all: false } }} {columns} id="id" data={$components} bind:selections />
   <div class="flex flex-col gap-2 rounded-md border border-slate-700 p-2">
     <div class="text-sm font-medium">Selections:</div>
     <pre>{JSON.stringify($selections)}</pre>

@@ -88,15 +88,8 @@
               toggleAll(v);
             }} />
         </th>
-      {:else if config?.selection?.row}
-        <th class="text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]">
-          <TableCheckbox
-            bind:checked={allSelected}
-            changed={(v: boolean) => {
-              toggleAll(v);
-            }} />
-        </th>
       {/if}
+
       {#each columns as column, index (column.field)}
         {#if typeof column.header === "function"}
           {@render column.header()}
@@ -111,8 +104,8 @@
   <tbody class="text-slate-400 [&_tr:last-child]:border-0">
     {#each data as row}
       <tr data-state={$selections.includes(row[id]) ? "selected" : ""} class="hover:bg-muted/10 overflow-hidden rounded-lg transition-colors duration-300 data-[state=selected]:bg-zinc-900/50">
-        <td class={twMerge("p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]")}>
-          {#if config?.selection?.row || config?.selection?.all}
+        {#if config?.selection?.row || config?.selection?.all}
+          <td class={twMerge("p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]")}>
             <TableCheckbox
               checked={$selections.includes(row[id])}
               changed={(v: boolean) => {
@@ -122,8 +115,8 @@
                   deselect(row[id]);
                 }
               }} />
-          {/if}
-        </td>
+          </td>
+        {/if}
         {#each columns as column, index (column.field)}
           <td class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] {column.classes}">
             {#if typeof column.renderer === "function"}
