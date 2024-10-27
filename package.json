@@ -30,9 +30,7 @@
     "vite-plugin-dts": "^4.2.3"
   },
   "peerDependencies": {
-    "svelte": "^5.0.0"
-  },
-  "dependencies": {
+    "svelte": "^5.0.0",
     "bits-ui": "^1.0.0-next.26",
     "tailwind-merge": "^2.5.4"
   }
