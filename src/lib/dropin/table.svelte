@@ -30,7 +30,7 @@
    * Toggle the "select all" state.
    * @param v - The new state.
    */
-  const toggleAll = (v: boolean) => {
+  const toggleAll = (v: boolean | "indeterminate") => {
     if (v) {
       for (let row of data) {
         select(row[id]);
@@ -84,7 +84,7 @@
         <th class="text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]">
           <TableCheckbox
             bind:checked={allSelected}
-            changed={(v: boolean) => {
+            changed={(v: boolean | "indeterminate") => {
               toggleAll(v);
             }} />
         </th>
@@ -108,7 +108,7 @@
           <td class={twMerge("p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]")}>
             <TableCheckbox
               checked={$selections.includes(row[id])}
-              changed={(v: boolean) => {
+              changed={(v: boolean | "indeterminate") => {
                 if (v) {
                   select(row[id]);
                 } else {

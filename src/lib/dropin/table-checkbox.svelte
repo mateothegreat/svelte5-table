@@ -12,7 +12,7 @@
 <Checkbox.Root
   controlledChecked={true}
   bind:checked
-  onCheckedChange={(v) => {
+  onCheckedChange={(v: boolean | "indeterminate") => {
     if (checked != v) {
       changed(v);
       checked = v;
