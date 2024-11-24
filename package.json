@@ -5,7 +5,8 @@
   "svelte": "./src/lib/index.ts",
   "exports": {
     ".": {
-      "svelte": "./src/lib/index.ts"
+      "svelte": "./src/lib/index.ts",
+      "types": "./src/lib/types.ts"
     }
   },
   "files": [
