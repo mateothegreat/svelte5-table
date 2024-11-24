@@ -1,3 +1,3 @@
-export * as DropinTable from "./dropin";
+export * from "./dropin";
 export * from "./types";
 
