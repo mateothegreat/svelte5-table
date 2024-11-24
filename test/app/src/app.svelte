@@ -13,7 +13,10 @@
   const columns: TableColumn[] = [
     {
       field: "id",
-      header: "Component ID"
+      header: {
+        value: "Component ID",
+        class: "text-purple-500"
+      }
     },
     {
       field: "name",
@@ -25,7 +28,7 @@
     },
     {
       field: "actions",
-      classes: "w-24 flex items-center justify-center",
+      class: "w-24 flex items-center justify-center",
       renderer: actionsColumn
     }
   ];

@@ -91,11 +91,19 @@
       {/if}
 
       {#each columns as column, index (column.field)}
-        {#if typeof column.header === "function"}
+        {#if typeof column.header === "object"}
+          {#if typeof column.header.value === "function"}
+            {@render column.header.value()}
+          {:else}
+            <th class={twMerge("text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", column.header.class)}>
+              {column.header.value}
+            </th>
+          {/if}
+        {:else if typeof column.header === "function"}
           {@render column.header()}
         {:else}
-          <th class={twMerge("text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", column.classes)}>
-            {column.header}
+          <th class={twMerge("text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", column.class)}>
+            {column.header}{typeof column.header}
           </th>
         {/if}
       {/each}
@@ -118,7 +126,7 @@
           </td>
         {/if}
         {#each columns as column, index (column.field)}
-          <td class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] {column.classes}">
+          <td class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] {column.class}">
             {#if typeof column.renderer === "function"}
               {@render column.renderer(row)}
             {:else}

@@ -12,12 +12,12 @@ export type TableRow = {
 
 export type TableColumn = {
   field: string;
-  classes?: string;
+  class?: string;
   header?: any;
   renderer?: Function;
 };
 
 export type TableProps = {
   columns: TableColumn[];
-  classes?: string;
+  class?: string;
 };
