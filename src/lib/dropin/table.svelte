@@ -103,7 +103,7 @@
           {@render column.header()}
         {:else}
           <th class={twMerge("text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", column.class)}>
-            {column.header}{typeof column.header}
+            {column.header}
           </th>
         {/if}
       {/each}
