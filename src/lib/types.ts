@@ -1,9 +1,9 @@
+import type { Snippet } from "svelte";
 import type { Writable } from "svelte/store";
 
-export type TableHeaderColumn = {
-  field: string;
+export type TableHeader = {
   class?: string;
-  sortable?: boolean;
+  value: string | Snippet;
 };
 
 export type TableRow = {
@@ -13,11 +13,11 @@ export type TableRow = {
 export type TableColumn = {
   field: string;
   class?: string;
-  header?: any;
+  header?: any | string | TableHeader;
   renderer?: Function;
 };
 
 export type TableProps = {
   columns: TableColumn[];
-  class?: string;
+  classes?: string;
 };
