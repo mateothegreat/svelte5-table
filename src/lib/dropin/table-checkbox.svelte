@@ -22,9 +22,9 @@
   {#snippet children({ checked }: { checked: boolean | "indeterminate" })}
     <div class="text-background inline-flex items-center justify-center">
       {#if checked === "indeterminate"}
-        <svg class={"h-3.5 w-3.5" + (!checked && " text-transparent")} xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14" /></svg>
-      {:else if checked === true || checked === false}
-        <svg class={"h-3.5 w-3.5" + (!!!checked && " text-transparent")} xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5" /></svg>
+        <svg class={"h-3.5 w-3.5" + (!checked ? " text-transparent" : "")} xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14" /></svg>
+      {:else}
+        <svg class={"h-3.5 w-3.5" + (!!!checked ? " text-transparent" : "")} xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5" /></svg>
       {/if}
     </div>
   {/snippet}
