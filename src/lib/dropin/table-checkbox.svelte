@@ -18,7 +18,7 @@
       checked = v;
     }
   }}
-  class="border-muted active:scale-98 data-[state=unchecked]:hover:border-dark-40  peer inline-flex size-[25px] items-center justify-center rounded-md border transition-all duration-150 ease-in-out data-[state=unchecked]:border-slate-500">
+  class="border-muted active:scale-98 peer inline-flex size-[25px] items-center justify-center rounded-md border transition-all duration-150 ease-in-out data-[state=checked]:border-2 data-[state=checked]:border-slate-400 data-[state=unchecked]:border-slate-700 data-[state=unchecked]:hover:border-slate-700">
   {#snippet children({ checked }: { checked: boolean | "indeterminate" })}
     <div class="text-background inline-flex items-center justify-center">
       {#if checked === "indeterminate"}
